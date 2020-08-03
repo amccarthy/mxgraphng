@@ -2,7 +2,7 @@
 /******************      Model         **************/
 
 declare class mxCell {
-    
+
     id: any;
     value;
     geometry;
@@ -62,6 +62,8 @@ declare class mxCell {
     clone(): mxCell;
 
     cloneValue();
+
+    getTooltip?: () => any;
 }
- 
+
 /******************      Model end     **************/

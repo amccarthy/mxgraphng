@@ -143,6 +143,8 @@ declare class mxGraph {
     alreadyConnectedResource;
     containsValidationErrorsResource;
     collapseExpandResource;
+    panningHandler: mxPanningHandler;
+
     getTooltipForCell(cell);
     init(container);
     createHandlers(container);
@@ -213,11 +215,11 @@ declare class mxGraph {
     addEdge(edge, parent, source, target, index);
     insertVertex(parent, id, value, x, y, width, height, style, relative);
     insertVertex(parent, id, value, x, y, width, height);
-    addCell(cell, parent, index, source, target);
+    addCell(cell, parent, index?, source?, target?);
     addCells(cells, parent, index, source, target);
     cellsAdded(cells, parent, index, source, target, absolute, constrain);
     autoSizeCell(cell, recurse);
-    removeCells(cells, includeEdges);
+    removeCells(cells?, includeEdges?);
     cellsRemoved(cells);
     splitEdge(edge, cells, newEdge, dx, dy);
     toggleCells(show, cells, includeEdges);
@@ -446,7 +448,7 @@ declare class mxGraph {
     isValidAncestor(cell, parent, recurse);
     getOpposites(edges, terminal, sources, targets);
     getEdgesBetween(source, target, directed);
-    getPointForEvent(evt, addOffset);
+    getPointForEvent(evt, addOffset?);
     getCells(x, y, width, height, parent, result);
     getCellsBeyond(x0, y0, parent, rightHalfpane, bottomHalfpane);
     findTreeRoots(parent, isolate, invert);
@@ -487,4 +489,5 @@ declare class mxGraph {
     fireGestureEvent(evt, cell);
     destroy();
 
+    setTooltips(enabled: boolean);
 }

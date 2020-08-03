@@ -95,6 +95,7 @@ declare class mxEvent {
     static REMOVE: any;
     static ROOT: any;
     static OPEN: any;
+    static CHANGE: any;
 }
 
 declare class mxMouseEvent {
@@ -134,6 +135,10 @@ declare class mxPoint {
 
     clone();
 
+}
+
+declare class mxRectangle extends mxPoint {
+    constructor(x: number, y: number, width: number, height: number);
 }
 
 /******************      Util end      **************/

@@ -774,4 +774,18 @@ declare class mxVertexHandler {
     destroy();
 }
 
+declare class mxKeyHandler {
+  constructor(graph: mxGraph);
+
+  bindKey(code: number, funct);
+}
+
+declare class mxPanningHandler {
+    constructor(graph: mxGraph);
+
+    useLeftButtonForPanning: boolean;
+
+    setPanningEnabled(value: boolean);
+}
+
 /******************      Handler end     **************/
