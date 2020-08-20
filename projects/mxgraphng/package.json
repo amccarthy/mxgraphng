@@ -1,13 +1,13 @@
 {
-  "name": "mxgraphng",
-  "version": "0.1.0",
+  "name": "@amccarthy/mxgraphng",
+  "version": "0.1.1",
   "description": "An Angular library that allows creating an mxgraph diagram component.",
   "author": "Ruan Theron",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Ex-Mente/mxgraphng.git"
+    "url": "https://github.com/amccarthy/mxgraphng.git"
   },
-  "homepage": "https://github.com/Ex-Mente/mxgraphng",
+  "homepage": "https://github.com/amccarthy/mxgraphng",
   "keywords": [
     "angular",
     "mxgraph",
@@ -18,8 +18,8 @@
   "schematics": "./schematics/collection.json",
   "scripts": {
     "build": "../../node_modules/.bin/tsc -p tsconfig.schematics.json",
-    "copy:schemas": "pwd && cp --parents ./schematics/*/schema.json ../../dist/mxgraphng/",
-    "copy:files": "cp --parents -p -r ./schematics/*/files/** ../../dist/mxgraphng/",
+    "copy:schemas": "pwd && rsync -R ./schematics/*/schema.json ../../dist/mxgraphng/",
+    "copy:files": "rsync -R -p -r ./schematics/*/files/** ../../dist/mxgraphng/",
     "copy:collection": "cp ./schematics/collection.json ../../dist/mxgraphng/schematics/collection.json",
     "postbuild": "npm run copy:schemas && npm run copy:files && npm run copy:collection"
   },
